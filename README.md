@@ -1,53 +1,64 @@
-# 📈 NHOM21 FINANCIAL TERMINAL – HỆ THỐNG GIAO DỊCH TÀI CHÍNH
+# 🎙️ NHOM21 AUDIO CONNECTOR – ỨNG DỤNG TRUYỀN THÔNG GIỌNG NÓI
 
-Hệ thống mô phỏng sàn giao dịch và thiết bị đầu cuối tài chính thời gian thực (Real-time Financial Terminal) dựa trên kiến trúc **TCP Socket** bất đồng bộ. Dự án bao gồm một Server trung tâm phát dữ liệu thị trường và Client "Premium" để theo dõi và phân tích.
+Hệ thống truyền thông giọng nói nội bộ (Voice over IP) thời gian thực dựa trên kiến trúc **TCP Socket** bất đồng bộ. Dự án bao gồm một Server trung tâm xử lý tín hiệu/kết nối và các Client cho phép người dùng thực hiện cuộc gọi thoại trực tiếp với chất lượng âm thanh ổn định và giao diện hiện đại.
 
-![UI Preview](https://via.placeholder.com/800x450.png?text=Financial+Terminal+Preview)
+![UI Preview](https://via.placeholder.com/800x450.png?text=Audio+Connector+Preview)
 
 ## 🌟 Tính Năng Nổi Bật
 
-### 1. Kiến Trúc Client-Server Mạnh Mẽ
-- **TCP Socket Asynchronous**: Đảm bảo hiệu năng cao, độ trễ thấp khi truyền tải dữ liệu giá theo thời gian thực.
-- **Multi-Client Support**: Server có khả năng phục vụ nhiều Client cùng lúc mà không bị tắc nghẽn.
-- **Protocol Tùy Biến**: Giao thức đóng gói dữ liệu riêng giúp tối ưu hóa băng thông.
+### 1. Truyền Thông Thời Gian Thực (Real-time Communication)
+- **Voice Call**: Truyền tải âm thanh giọng nói hai chiều giữa các client thông qua Server.
+- **Low Latency**: Tối ưu hóa gói tin TCP để giảm độ trễ, đảm bảo cuộc hội thoại tự nhiên.
+- **NAudio Integration**: Sử dụng thư viện NAudio để thu âm (Microphone) và phát lại âm thanh (Speaker) với chất lượng cao.
 
-### 2. Giao Diện "Premium" (Modern UI)
-Client được thiết kế lại hoàn toàn với phong cách hiện đại, chuyên nghiệp:
-- **Gradient Header**: Thanh tiêu đề với hiệu ứng màu chuyển tiếp sang trọng (Glass-morphism).
-- **Dark/Light Mode**: Tùy chọn chế độ Sáng/Tối phù hợp với môi trường làm việc.
-- **Sparklines**: Biểu đồ mini tích hợp ngay trong bảng giá để theo dõi xu hướng nhanh.
-- **Visual Cues**: Tự động đổi màu (Xanh/Đỏ) và hiệu ứng flash khi giá biến động.
-- **Borderless Window**: Cửa sổ không viền, bo góc mềm mại, hỗ trợ kéo thả tùy chỉnh.
-- **Responsive Animations**: Hiệu ứng mượt mà khi tương tác (hover, click, update dữ liệu).
+### 2. Giao Diện Hiện Đại & Trực Quan
+- **Modern Dark UI**: Giao diện tối màu, giảm mỏi mắt, mang phong cách ứng dụng chuyên nghiệp.
+- **Audio Visualizer**: Biểu đồ sóng âm (Waveform) hiển thị thời gian thực, phản hồi theo cường độ âm thanh đầu vào/đầu ra.
+- **Connection Status**: Trạng thái kết nối (Online/Offline) và Logs chi tiết giúp người dùng dễ dàng theo dõi.
 
-## �️ Công Nghệ Sử Dụng
-- **Ngôn Ngữ**: C# (.NET 6.0/8.0)
-- **Framework**: Windows Forms (WinForms) với GDI+ Custom Drawing.
-- **Networking**: `System.Net.Sockets`
-- **Mô hình**: Asynchronous TCP/IP
+## 🛠️ Công Nghệ Sử Dụng
+- **Ngôn Ngữ**: C# (.NET 10.0)
+- **Framework**: Windows Forms (WinForms)
+- **Thư viện âm thanh**: [NAudio](https://github.com/naudio/NAudio)
+- **Giao thức mạng**: TCP/IP Sockets (Asynchronous)
 
 ## 🚀 Hướng Dẫn Cài Đặt & Chạy
 
 ### Yêu Cầu
-- .NET SDK (6.0 hoặc mới hơn).
+- .NET SDK (10.0 hoặc tương thích).
 - Visual Studio 2022 hoặc VS Code.
+- Microphone và Loa/Tai nghe.
 
 ### Các Bước Thực Hiện
+
 1. **Clone Repository**
    ```bash
-   git clone https://github.com/hieupnm805208-glitch/Nhom21--FINANCIAL-TERMINAL.git
-   cd "Nhom21--FINANCIAL-TERMINAL"
+   git clone https://github.com/hieupnm805208-glitch/Nhom21-Laptrinhungdung-Audio.git
+   cd "Nhom21-Laptrinhungdung-Audio"
    ```
 
-2. **Chạy Server** (Sàn giao dịch)
-   - Mở terminal tại thư mục Server.
-   - Chạy lệnh: `dotnet run`
-   - Server sẽ khởi động tại địa chỉ `127.0.0.1:8888`.
+2. **Chạy Server** (Bộ chuyển tiếp tín hiệu)
+   - Mở terminal, di chuyển vào thư mục Server:
+     ```bash
+     cd Nhom21.AudioConnector.Server
+     ```
+   - Chạy lệnh:
+     ```bash
+     dotnet run
+     ```
+   - Server sẽ lắng nghe tại cổng mặc định `11000`.
 
-3. **Chạy Client** (Terminal người dùng)
-   - Mở terminal tại thư mục Client.
-   - Chạy lệnh: `dotnet run`
-   - Nhập IP và Port (mặc định đã điền sẵn) và nhấn **"Kết nối"**.
+3. **Chạy Client** (Người dùng cuối)
+   - Mở một (hoặc nhiều) terminal khác, di chuyển vào thư mục Client:
+     ```bash
+     cd Nhom21.AudioConnector.Client
+     ```
+   - Chạy lệnh:
+     ```bash
+     dotnet run
+     ```
+   - Nhập **Server IP** (thường là `127.0.0.1` nếu chạy local) và nhấn **"Connect"**.
+   - Nhấn **"Start Call"** để bắt đầu gửi/nhận âm thanh.
 
 ## 👥 Thành Viên Nhóm 21
 - **[Tên Thành Viên]** - Trưởng nhóm / Backend
