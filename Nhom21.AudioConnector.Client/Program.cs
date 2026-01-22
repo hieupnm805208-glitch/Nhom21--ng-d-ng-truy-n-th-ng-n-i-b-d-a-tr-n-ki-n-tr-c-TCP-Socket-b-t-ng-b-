@@ -1,4 +1,4 @@
-namespace Nhom21.FinancialTerminal.Server;
+namespace Nhom21.AudioConnector.Client;
 
 static class Program
 {

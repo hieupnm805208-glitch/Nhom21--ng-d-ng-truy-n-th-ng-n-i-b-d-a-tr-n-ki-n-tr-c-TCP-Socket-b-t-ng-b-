@@ -1,23 +1,58 @@
-# NHOM21 FINANCIAL TERMINAL �
+# 📈 NHOM21 FINANCIAL TERMINAL – HỆ THỐNG GIAO DỊCH TÀI CHÍNH
 
-Hệ thống Phân phối dữ liệu tài chính thời gian thực dựa trên kiến trúc TCP Socket.
+Hệ thống mô phỏng sàn giao dịch và thiết bị đầu cuối tài chính thời gian thực (Real-time Financial Terminal) dựa trên kiến trúc **TCP Socket** bất đồng bộ. Dự án bao gồm một Server trung tâm phát dữ liệu thị trường và Client "Premium" để theo dõi và phân tích.
 
-## 🏢 1. Giới Thiệu
-Nhom21 Financial Terminal là một hệ thống mô phỏng sàn giao dịch chứng khoán. Server đóng vai trò là "Sàn giao dịch tập trung" tự động giả lập các chỉ số chứng khoán, và các Client là các "Máy trạm phân tích" kết nối vào để nhận dữ liệu thời gian thực.
+![UI Preview](https://via.placeholder.com/800x450.png?text=Financial+Terminal+Preview)
 
-## 🛠️ 2. Tính Năng Chính
-- **Real-time Data Streaming**: Dữ liệu giá nhảy liên tục từng giây qua TCP Socket.
-- **Multi-Client Sync**: Mọi máy trạm đều nhận được dữ liệu đồng bộ từ Server.
-- **Visual Change Detection**: Giao diện tự động đổi màu (Xanh: Tăng, Đỏ: Giảm) giúp theo dõi biến động thị trường tức thì.
+## 🌟 Tính Năng Nổi Bật
 
-## 📂 3. Cấu Trúc Dự Án
-- **Nhom21.FinancialTerminal.Server**: Giả lập dữ liệu và phát sóng (Broadcast).
-- **Nhom21.FinancialTerminal.Client**: Giao diện máy trạm phân tích.
+### 1. Kiến Trúc Client-Server Mạnh Mẽ
+- **TCP Socket Asynchronous**: Đảm bảo hiệu năng cao, độ trễ thấp khi truyền tải dữ liệu giá theo thời gian thực.
+- **Multi-Client Support**: Server có khả năng phục vụ nhiều Client cùng lúc mà không bị tắc nghẽn.
+- **Protocol Tùy Biến**: Giao thức đóng gói dữ liệu riêng giúp tối ưu hóa băng thông.
 
-## � 4. Hướng Dẫn Chạy
-1. **Chạy Server**: Mở dự án Server và nhấn Start. Server sẽ bắt đầu tạo dữ liệu giả lập.
-2. **Chạy Client**: Mở dự án Client, nhập IP/Port của Server và nhấn Connect.
+### 2. Giao Diện "Premium" (Modern UI)
+Client được thiết kế lại hoàn toàn với phong cách hiện đại, chuyên nghiệp:
+- **Gradient Header**: Thanh tiêu đề với hiệu ứng màu chuyển tiếp sang trọng (Glass-morphism).
+- **Dark/Light Mode**: Tùy chọn chế độ Sáng/Tối phù hợp với môi trường làm việc.
+- **Sparklines**: Biểu đồ mini tích hợp ngay trong bảng giá để theo dõi xu hướng nhanh.
+- **Visual Cues**: Tự động đổi màu (Xanh/Đỏ) và hiệu ứng flash khi giá biến động.
+- **Borderless Window**: Cửa sổ không viền, bo góc mềm mại, hỗ trợ kéo thả tùy chỉnh.
+- **Responsive Animations**: Hiệu ứng mượt mà khi tương tác (hover, click, update dữ liệu).
+
+## �️ Công Nghệ Sử Dụng
+- **Ngôn Ngữ**: C# (.NET 6.0/8.0)
+- **Framework**: Windows Forms (WinForms) với GDI+ Custom Drawing.
+- **Networking**: `System.Net.Sockets`
+- **Mô hình**: Asynchronous TCP/IP
+
+## 🚀 Hướng Dẫn Cài Đặt & Chạy
+
+### Yêu Cầu
+- .NET SDK (6.0 hoặc mới hơn).
+- Visual Studio 2022 hoặc VS Code.
+
+### Các Bước Thực Hiện
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/hieupnm805208-glitch/Nhom21--FINANCIAL-TERMINAL.git
+   cd "Nhom21--FINANCIAL-TERMINAL"
+   ```
+
+2. **Chạy Server** (Sàn giao dịch)
+   - Mở terminal tại thư mục Server.
+   - Chạy lệnh: `dotnet run`
+   - Server sẽ khởi động tại địa chỉ `127.0.0.1:8888`.
+
+3. **Chạy Client** (Terminal người dùng)
+   - Mở terminal tại thư mục Client.
+   - Chạy lệnh: `dotnet run`
+   - Nhập IP và Port (mặc định đã điền sẵn) và nhấn **"Kết nối"**.
+
+## 👥 Thành Viên Nhóm 21
+- **[Tên Thành Viên]** - Trưởng nhóm / Backend
+- **[Tên Thành Viên]** - Frontend / UI Design
+- **[Tên Thành Viên]** - Tester / Documentation
 
 ---
-*Đồ án thực hiện bởi Nhóm 21 - Lập trình ứng dụng mạng.*
-
+*Dự án môn học Lập trình ứng dụng mạng - Năm học 2024-2025*
