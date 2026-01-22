@@ -8,7 +8,7 @@ namespace VCore.Server
     {
         static async Task Main(string[] args)
         {
-            Console.Title = "V-CORE Messenger Server";
+            Console.Title = "Nhóm 21 - V-CORE Messenger Server";
             
             int port = 8080;
             SocketServer server = new SocketServer(port);
